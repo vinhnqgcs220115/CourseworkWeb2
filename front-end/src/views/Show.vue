@@ -8,11 +8,26 @@
         </div>
         <input type="text" readonly  :value="word.german"/>
       </div>
+
       <div class="ui labeled input fluid">
         <div class="ui label">
           <i class="united kingdom flag"></i> English
         </div>
         <input type="text" readonly  :value="word.english"/>
+      </div>
+
+      <div class="ui labeled input fluid">
+        <div class="ui label">
+          <i class="france flag"></i> France
+        </div>
+        <input type="text" readonly  :value="word.france"/>
+      </div>
+
+      <div class="ui labeled input fluid">
+        <div class="ui label">
+          <i class="spain flag"></i> Spain
+        </div>
+        <input type="text" readonly  :value="word.spain"/>
       </div>
       <div class="actions">
         <router-link :to="{ name: 'edit', params: { id: this.$route.params.id }}">

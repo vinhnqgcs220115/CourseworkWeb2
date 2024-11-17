@@ -6,7 +6,7 @@ global.Vocab = require('./api/models/vocabModel');
 const routes = require('./api/routes/vocabRoutes')
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://vinhnqgcs220115:123@fgwweb2.vnnnx.mongodb.net/?retryWrites=true&w=majority&appName=FGWWeb2', 
+mongoose.connect('mongodb+srv://vinhnqgcs220115:123@fgwweb2.vnnnx.mongodb.net/CourseworkWeb2?retryWrites=true&w=majority&appName=FGWWeb2', 
     { useNewUrlParser:true }
 );
 const port = process.env.PORT || 3000;
