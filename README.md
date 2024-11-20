@@ -1,9 +1,9 @@
 ﻿# CourseworkWeb2
 
 # Local hosting frontend
-cd front-end /n
+cd front-end
 npm run serve
 
 Connect MongoDB
-cd server /n
+cd server
 npm run start
