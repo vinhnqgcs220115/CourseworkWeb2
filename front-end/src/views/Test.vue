@@ -7,6 +7,10 @@
       </div>
       <div v-else>
         <vocab-test :words="words"></vocab-test>
+
+        <div>
+          <p>Time remaining: {{ timeRemaining }} seconds</p>
+        </div>
       </div>
     </div>
   </template>
@@ -22,11 +26,37 @@
     },
     data() {
       return {
-        words: []
+        words: [],
+        timeRemaining: 600,
+        timer: null,
       };
+    },
+    methods: {
+      startTimer: function() {
+        this.timer = setInterval(() => {
+          if (this.timeRemaining > 0) {
+            this.timeRemaining -=1
+          } else {
+            clearInterval(this.timer);
+            this.finishTest();
+          }
+        }, 1000);
+      },
+      finishTest: function() {
+        alert('Time is up! Your test is complete.');
+      }
     },
     async mounted() {
       this.words = await api.getWords();
+
+      if (this.words.length >= 5) {
+        this.startTimer();
+      }
+    },
+    beforeDestroy: function() {
+      if (this.timer) {
+        clearInterval(this.timer);
+      }
     }
   };
   </script>
