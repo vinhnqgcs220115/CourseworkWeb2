@@ -3,5 +3,5 @@
 # Local hosting frontend
 cd front-end: npm run serve
 
-Connect MongoDB
+# Connect MongoDB
 cd server: npm run start
