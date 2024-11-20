@@ -19,6 +19,11 @@ const VocabSchema = new Schema(
         spain: {
             type: String,
             required: 'Spain word cannot be blank'
+        },
+        album: {
+            type: String,
+            enum: ['greetings', 'numbers', 'animals', 'others'],
+            required: 'Please choose collection for this word'
         }
     },
     { collection: 'vocab' }

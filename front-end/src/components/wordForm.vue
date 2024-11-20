@@ -1,6 +1,17 @@
 <template>
   <form action="#" @submit.prevent="onSubmit">
-     <p v-if="errorsPresent" class="error">Please fill out both fields!</p>
+     <p v-if="errorsPresent" class="error">Please fill all fields!</p>
+
+     <div class="ui labeled input fluid">
+      <div class="ui label">Collection</div>
+      <select v-model="word.album" class="ui dropdown">
+        <option value="">Select Collection</option>
+        <option value="greetings">Greetings</option>
+        <option value="numbers">Numbers</option>
+        <option value="animals">Animals</option>
+        <option value="others">Others</option>
+      </select>
+     </div>
  
      <div class="ui labeled input fluid">
        <div class="ui label">
@@ -41,14 +52,13 @@
      word: {
        type: Object,
        required: false,
-       default: () => {
-        return {
-            english: '',
-            german: '',
-            france: '',
-            spain: ''
-        };
-       }
+       default: () => ({
+        english: '',
+        german: '',
+        france: '',
+        spain: '',
+        album: ''
+       })
      }
    },
    data() {
@@ -58,7 +68,7 @@
    },
    methods: {
      onSubmit: function() {
-        if (this.word.english === '' || this.word.german === '' || this.word.france === '' || this.word.spain === '') {
+        if (this.word.english === '' || this.word.german === '' || this.word.france === '' || this.word.spain === '' || this.word.album === '') {
             this.errorsPresent = true;
         } else {
             this.$emit('createOrUpdate', this.word);

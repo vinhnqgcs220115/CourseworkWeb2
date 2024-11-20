@@ -28,7 +28,7 @@ export const api = {
         return res.data;
     }),
     deleteWord: handleError(async id => {
-        const res = await axios.delete(baseURL + id);
+        const res = await axios.delete(`${baseURL}${id}`);
         return res.data;
     }),
     createWord: handleError(async payload => {
@@ -36,7 +36,7 @@ export const api = {
         return res.data;
     }),
     updateWord: handleError(async payload => {
-        const res = await axios.put(baseURL + payload._id, payload);
+        const res = await axios.put(`${baseURL}${payload._id}`, payload);
         return res.data;
     })
 };
