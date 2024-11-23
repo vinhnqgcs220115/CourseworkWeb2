@@ -27,7 +27,7 @@
     data() {
       return {
         words: [],
-        timeRemaining: 600,
+        timeRemaining: 10,
         timer: null,
       };
     },
@@ -44,6 +44,34 @@
       },
       finishTest: function() {
         alert('Time is up! Your test is complete.');
+
+        const incorrectGuesses = this.incorrectGuesses || [];
+        const remainingQuestion = this.questionPool || [];
+
+        // save result
+        const testResult = {
+          date: new Date().toLocaleString(),
+          score: this.score,
+          totalQuestions: this.totalQuestions,
+          questions: incorrectGuesses.concat(remainingQuestion.map(q => ({
+            word: q.word,
+            language: q.language,
+            userAnswer: '',
+            correctAnswer: q.word[q.language],
+            correct: false
+          }))),
+        };
+
+        const existingResults = JSON.parse(localStorage.getItem('testResults')) || [];
+
+        existingResults.unshift(testResult);
+        if (existingResults > 5) {
+          existingResults.pop();
+        }
+
+        localStorage.setItem('testResults', JSON.stringify(existingResults));
+
+        this.$router.push('/results')
       }
     },
     async mounted() {

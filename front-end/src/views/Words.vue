@@ -22,7 +22,7 @@
                     <th><span><i class="germany flag"></i>German</span></th>
                     <th><span><i class="france flag"></i>Franch</span></th>
                     <th><span><i class="spain flag"></i>Spain</span></th>
-                    <th><span><i class="tags icon"></i>Collection</span></th>
+                    <!-- <th><span><i class="tags icon"></i>Collection</span></th> -->
                     <th colspan="3"></th>
                 </tr>
             </thead>
@@ -31,7 +31,7 @@
                 <td>{{ word.german }}</td>
                 <td>{{ word.france }}</td>
                 <td>{{ word.spain }}</td>
-                <td>{{ word.album }}</td>
+                <!-- <td>{{ word.album }}</td> -->
                 <td width="75" class="center aligned"><router-link :to="{ name: 'show', params: { id: word._id }}"><i class="eye icon"></i>Show</router-link></td>
                 <td width="75" class="center aligned"><router-link :to="{ name: 'edit', params: { id: word._id }}"><i class="edit icon"></i>Edit</router-link></td>
                 <td width="75" class="center aligned" @click.prevent="onDestroy(word._id)"><a href="`/words/%{word._id}`"><i class="trash icon"></i>Destroy</a></td>
