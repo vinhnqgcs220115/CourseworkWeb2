@@ -38,5 +38,21 @@ export const api = {
     updateWord: handleError(async payload => {
         const res = await axios.put(`${baseURL}${payload._id}`, payload);
         return res.data;
-    })
+    }),
+    getTestResults: async (skip = 0, limit = 5) => {
+        const response = await axios.get(`http://localhost:3000/results?skip=${skip}&limit=${limit}`);
+        return response.data;
+    },
+
+    // Fetch a specific test result by ID
+    getTestResult: async (id) => {
+        const response = await axios.get(`http://localhost:3000/results/${id}`);
+        return response.data;
+    },
+
+    // Create and save a test result
+    createTestResult: async (result) => {
+        const response = await axios.post(`http://localhost:3000/results`, result);
+        return response.data;
+    },
 };

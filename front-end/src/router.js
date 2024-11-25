@@ -6,6 +6,7 @@ import Show from './views/Show.vue';
 import Edit from './views/Edit.vue';
 import Test from './views/Test.vue';
 import TestResults from './views/testResults.vue';
+import Details from './views/Details.vue';
 
 Vue.use(Router);
 
@@ -47,6 +48,11 @@ export default new Router({
             path: '/results',
             name: 'results',
             component: TestResults
+        },
+        {
+            path: '/results/:id',
+            name: 'details',
+            component: Details
         }
     ]
 });

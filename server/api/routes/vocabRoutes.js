@@ -1,4 +1,5 @@
 const vocabBuilder = require('../controllers/vocabController');
+
 module.exports = app => {
     app
      .route('/words')
@@ -8,5 +9,12 @@ app
      .route('/words/:wordId')
      .get(vocabBuilder.read_a_word)
      .put(vocabBuilder.update_a_word)
-     .delete(vocabBuilder.delete_a_word)
+     .delete(vocabBuilder.delete_a_word);
+app
+     .route('/results')
+     .get(vocabBuilder.list_test_results)
+     .post(vocabBuilder.create_test_result);
+app
+     .route('/results/:id')
+     .get(vocabBuilder.get_test_result)
 }

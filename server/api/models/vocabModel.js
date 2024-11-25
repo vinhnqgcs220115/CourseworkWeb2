@@ -29,4 +29,41 @@ const VocabSchema = new Schema(
     { collection: 'vocab' }
 );
 
-module.exports = mongoose.model('Vocab', VocabSchema)
+const TestResultSchema = new Schema(
+    {
+        index: {
+            type: Number,
+            required: true,
+            unique: true
+        },
+        date: {
+            type: String,
+            required: true
+        },
+        timeTaken: {
+            type: Number,
+            required: true
+        },
+        score: {
+            type: Number,
+            required: true
+        },
+        totalQuestions: {
+            type: Number,
+            required: true
+        },
+        questions: [
+            {
+                word: { type: Object, required: true },
+                language: { type: String, required: true },
+                userAnswer: { type: String, required: false },
+                correctAnswer: { type: String, required: true },
+                correct: { type: Boolean, required: true },
+            },
+        ]
+    },
+    { collection: 'test results' }
+)
+
+module.exports = mongoose.model('Vocab', VocabSchema);
+module.exports = mongoose.model('TestResult', TestResultSchema);

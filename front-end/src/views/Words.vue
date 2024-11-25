@@ -64,7 +64,6 @@ export default {
             await api.deleteWord(id);
             this.flash('Word delete successfully', 'success');
             this.word = this.words.filter(word => word._id !== id);
-            // this.words = newWords;
         }
     },
     async mounted() {
@@ -77,11 +76,11 @@ export default {
 th span {
     display: flex;
     align-items: center;
-    gap: 8px; /* Adds spacing between the flag and text */
+    gap: 8px;
 }
 
 th i.flag {
-    font-size: 1.2em; /* Adjust flag size if needed */
+    font-size: 1.2em;
 }
 
 td i.icon {
