@@ -40,19 +40,19 @@ export const api = {
         return res.data;
     }),
     getTestResults: async (skip = 0, limit = 5) => {
-        const response = await axios.get(`http://localhost:3000/results?skip=${skip}&limit=${limit}`);
-        return response.data;
+        const res = await axios.get(`http://localhost:3000/results?skip=${skip}&limit=${limit}`);
+        return res.data;
     },
 
     // Fetch a specific test result by ID
     getTestResult: async (id) => {
-        const response = await axios.get(`http://localhost:3000/results/${id}`);
-        return response.data;
+        const res = await axios.get(`http://localhost:3000/results/${id}`);
+        return res.data;
     },
 
     // Create and save a test result
     createTestResult: async (result) => {
-        const response = await axios.post(`http://localhost:3000/results`, result);
-        return response.data;
+        const res = await axios.post(`http://localhost:3000/results`, result);
+        return res.data;
     },
 };
