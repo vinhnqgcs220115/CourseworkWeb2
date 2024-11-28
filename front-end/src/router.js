@@ -7,6 +7,7 @@ import Edit from './views/Edit.vue';
 import Test from './views/Test.vue';
 import TestResults from './views/testResults.vue';
 import Details from './views/Details.vue';
+import About from './views/About.vue';
 
 Vue.use(Router);
 
@@ -18,6 +19,11 @@ export default new Router({
         {
             path: '/',
             redirect: '/words'
+        },
+        {
+            path: '/about',
+            name: 'about',
+            component: About
         },
         {
             path: '/words',

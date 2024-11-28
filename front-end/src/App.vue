@@ -15,6 +15,9 @@
           <router-link to='/results' class="item">
             <i class="chart bar outline icon"></i> Test Results
           </router-link>
+          <router-link to='/about' class="item">
+            <i class="info circle icon"></i> About
+          </router-link>
         </div>
       </div>
     </div>
@@ -31,8 +34,21 @@
 </template>
 
 <script>
+import { api } from './helpers/helpers';
+
 export default {
-  name: 'app'
+  name: 'app',
+  async created() {
+    try {
+      const words = await api.getWords();
+      if (!words || words.length === 0) {
+        this.$router.push('/about');
+      }
+    } catch (err) {
+      console.error('Error check words: ', err);
+      this.$router.push('/about')
+    }
+  }
 }
 </script>
 
