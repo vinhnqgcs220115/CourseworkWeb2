@@ -47,9 +47,10 @@
     name: 'about',
     data() {
       return {
-        profilePicture: "https://scontent.fsgn5-10.fna.fbcdn.net/v/t1.6435-9/171495109_522526552241352_907902510963333187_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=fJqrlryW5FUQ7kNvgE9Z8bG&_nc_pt=1&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=A-1lzzWh7LEX7We04MaIQ7p&oh=00_AYAIhqJXkbt6ItcZ9Io8m4RRT5_UyrWm-jeF6w-odMpOKQ&oe=67701DF8",
+        profilePicture: "https://scontent.fsgn5-14.fna.fbcdn.net/v/t39.30808-6/440403503_1201839574310043_384857189797262951_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=aWla-5_tfoEQ7kNvgGiQoXD&_nc_pt=1&_nc_zt=23&_nc_ht=scontent.fsgn5-14.fna&_nc_gid=AHBXz6TtS85EiZy2yTpSCAX&oh=00_AYAEFjTnzDQQK-0qrVBy2bla76SyRldSAxpey8nmzlybyQ&oe=674F1EFC",
+        //"https://scontent.fsgn5-10.fna.fbcdn.net/v/t1.6435-9/171495109_522526552241352_907902510963333187_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=fJqrlryW5FUQ7kNvgE9Z8bG&_nc_pt=1&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=A-1lzzWh7LEX7We04MaIQ7p&oh=00_AYAIhqJXkbt6ItcZ9Io8m4RRT5_UyrWm-jeF6w-odMpOKQ&oe=67701DF8",
         email: "vinhnqgcs220115@fpt.edu.vn",
-        githubLink: "https://github.com/vinhnqgcs220115/CourseworkWeb2",
+        githubLink: "https://github.com/vinhnqgcs220115",
       };
     },
   };
