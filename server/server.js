@@ -2,13 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 global.Vocab = require('./api/models/vocabModel');
 const routes = require('./api/routes/vocabRoutes')
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://vinhnqgcs220115:123@fgwweb2.vnnnx.mongodb.net/CourseworkWeb2?retryWrites=true&w=majority&appName=FGWWeb2', 
-    { useNewUrlParser:true }
-);
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser:true });
 const port = process.env.PORT || 3000;
 const app = express();
 app.use(cors());

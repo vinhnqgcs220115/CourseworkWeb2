@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Words</h1>
+        <h1>Words</h1> <p>There are <strong>{{ words.length }}</strong> words that have been added</p>
         
         <div class="ui form">
             <div class="field">
@@ -63,7 +63,7 @@ export default {
             if (!sure) return;
             await api.deleteWord(id);
             this.flash('Word delete successfully', 'success');
-            this.word = this.words.filter(word => word._id !== id);
+            this.words = this.words.filter(word => word._id !== id);
         }
     },
     async mounted() {
